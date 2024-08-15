@@ -1,8 +1,6 @@
 parameters:
 - name: rootFolder
   type: string
-- name: tfvarsFile
-  type: string
 - name: adoEnvironment
   type: string
 
@@ -18,7 +16,7 @@ stages:
         echo "Running Terraform init..."
         terraform init
         echo "Running Terraform plan..."
-        terraform plan -var-file ${{ parameters.tfvarsFile }}
+        terraform plan -var-file
       displayName: 'Terraform plan'
       workingDirectory: ${{ parameters.rootFolder }}
       env:
@@ -43,7 +41,7 @@ stages:
               echo "Running Terraform init..."
               terraform init
               echo "Running Terraform apply..."
-              terraform apply -var-file ${{ parameters.tfvarsFile }} -auto-approve
+              terraform apply -auto-approve
             displayName: 'Terraform apply'
             workingDirectory: ${{ parameters.rootFolder }}
             env:
