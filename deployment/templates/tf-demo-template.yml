@@ -20,7 +20,7 @@ stages:
         echo "Running Terraform plan..."
         terraform plan
       displayName: 'Terraform plan'
-      workingDirectory: ${{ parameters.rootFolder }}
+      #workingDirectory: ${{ parameters.rootFolder }}
       env:
         ARM_CLIENT_SECRET: $(ARM_CLIENT_SECRET) # this needs to be explicitly set as it's a sensitive value
 
@@ -45,6 +45,6 @@ stages:
               echo "Running Terraform apply..."
               terraform apply -auto-approve
             displayName: 'Terraform apply'
-            workingDirectory: ${{ parameters.rootFolder }}
+            #workingDirectory: ${{ parameters.rootFolder }}
             env:
               ARM_CLIENT_SECRET: $(ARM_CLIENT_SECRET)
