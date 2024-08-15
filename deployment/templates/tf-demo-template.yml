@@ -9,8 +9,8 @@ stages:
   displayName: 'Terraform Plan'
   jobs:
   - job: 'Terraform_Plan'
-    pool:
-      vmImage: 'ubuntu-latest'
+    pool: 'my-dell-laptop'
+    # vmImage: 'ubuntu-latest'
     steps:
     - script: |
         echo "Running Terraform init..."
@@ -29,8 +29,8 @@ stages:
   condition: succeeded()
   jobs:
   - deployment: 'Terraform_Apply'
-    pool:
-      vmImage: 'ubuntu-latest'
+    pool: 'my-dell-laptop'
+    # vmImage: 'ubuntu-latest'
     environment: ${{ parameters.adoEnvironment }} # using an ADO environment allows us to add a manual approval check
     strategy:
       runOnce:
