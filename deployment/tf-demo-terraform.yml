@@ -6,8 +6,6 @@ variables:
   - group: Terraform-SPn
   - name: rootFolder
     value: '/'
-  - name: tfvarsFile
-    value: 'tf.demo.tfvars'
   - name: adoEnvironment
     value: 'demo'
   

@@ -13,6 +13,8 @@ stages:
     # vmImage: 'ubuntu-latest'
     steps:
     - script: |
+        echo "Checking current folder..."
+        dir
         echo "Running Terraform init..."
         terraform init
         echo "Running Terraform plan..."
