@@ -16,7 +16,7 @@ stages:
         echo "Running Terraform init..."
         terraform init
         echo "Running Terraform plan..."
-        terraform plan -var-file
+        terraform plan
       displayName: 'Terraform plan'
       workingDirectory: ${{ parameters.rootFolder }}
       env:
