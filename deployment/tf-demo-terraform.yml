@@ -1,0 +1,16 @@
+name: Terraform - Azure Container Apps and WAF provision to Demo env
+
+trigger: none
+
+variables:
+  - group: Terraform-SPn
+  - name: rootFolder
+    value: '/'
+  - name: adoEnvironment
+    value: 'demo'
+  
+stages:
+- template: templates/tf-demo-template.yml
+  parameters:
+    rootFolder: $(rootFolder)
+    adoEnvironment: $(adoEnvironment)
